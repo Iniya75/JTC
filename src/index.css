@@ -1,0 +1,80 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-red: #d71920;
+  --color-gold: #ffc928;
+  --color-maroon: #75131b;
+  --color-maroon-deep: #4c0b11;
+  --color-cream: #fff9e9;
+  --color-ink: #242424;
+  --color-muted: #5f5a52;
+
+  --font-display: 'Fraunces Variable', Georgia, serif;
+  --font-sans: 'Manrope Variable', system-ui, sans-serif;
+
+  --shadow-soft: 0 18px 50px -24px rgb(76 11 17 / 0.28);
+  --shadow-lift: 0 30px 70px -28px rgb(76 11 17 / 0.42);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-gold);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .section-y {
+    @apply py-20 sm:py-24 lg:py-32;
+  }
+
+  .eyebrow {
+    @apply text-xs font-bold tracking-[0.22em] uppercase;
+  }
+
+  .heading-section {
+    @apply text-4xl leading-[1.08] font-medium tracking-tight sm:text-5xl;
+  }
+
+  /* The arch recurs through the page: a nod to Madurai's temple gateways. */
+  .arch {
+    border-radius: 999px 999px 1.5rem 1.5rem;
+  }
+
+  .kolam {
+    background-image: url('./assets/kolam.svg');
+    background-size: 64px 64px;
+  }
+}
